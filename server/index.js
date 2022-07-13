@@ -17,13 +17,13 @@ import postRoutes from "./routes/posts.js";
 
 const app = express();
 
-// Adding a "/posts" prefix to all routes
-app.use("/posts", postRoutes);
-
 // Setting up the body parser to properly send the requests
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+
+// Adding a "/posts" prefix to all routes
+app.use("/posts", postRoutes);
 
 // The connection URL to our MongoDB Atlas database cluster
 const CONNECTION_URL =
