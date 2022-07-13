@@ -10,4 +10,10 @@ import App from "./App";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  // Wrap application with a provider component
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);

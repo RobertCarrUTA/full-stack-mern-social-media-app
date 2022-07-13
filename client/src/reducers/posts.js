@@ -7,7 +7,8 @@ export default (posts = [], action) => {
   switch (action.type) {
     // Fetch all the posts
     case "FETCH_ALL":
-      return posts;
+      // action.payload are our actual posts
+      return action.payload;
     case "CREATE":
       return posts;
     default:
