@@ -45,10 +45,8 @@ const Form = () => {
           variant="outlined"
           label="Title"
           fullWidth
-          value={postData.creator}
-          onChange={(e) =>
-            setPostData({ ...postData, creator: e.target.value })
-          }
+          value={postData.title}
+          onChange={(e) => setPostData({ ...postData, title: e.target.value })}
         />
         {/* This TextField is for the message of the post */}
         <TextField
@@ -56,9 +54,9 @@ const Form = () => {
           variant="outlined"
           label="Message"
           fullWidth
-          value={postData.creator}
+          value={postData.message}
           onChange={(e) =>
-            setPostData({ ...postData, creator: e.target.value })
+            setPostData({ ...postData, message: e.target.value })
           }
         />
         {/* This TextField is for the tags of the post */}
@@ -67,10 +65,8 @@ const Form = () => {
           variant="outlined"
           label="Tags"
           fullWidth
-          value={postData.creator}
-          onChange={(e) =>
-            setPostData({ ...postData, creator: e.target.value })
-          }
+          value={postData.tags}
+          onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
         />
       </form>
     </Paper>
