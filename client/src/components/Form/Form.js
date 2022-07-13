@@ -25,6 +25,7 @@ const Form = () => {
         onSubmit={handleSubmit}
       >
         <Typography variant="h6">Creating a Memory</Typography>
+
         {/* This TextField is for who is creating a post */}
         <TextField
           name="creator"
@@ -34,6 +35,39 @@ const Form = () => {
           value={postData.creator}
           // This on change allows us to only change the creator value of postData.creator even with multiple TextFields
           // We have to spread the postData and then set the e.target.value to the creator attribute
+          onChange={(e) =>
+            setPostData({ ...postData, creator: e.target.value })
+          }
+        />
+        {/* This TextField is for the title of the post */}
+        <TextField
+          name="title"
+          variant="outlined"
+          label="Title"
+          fullWidth
+          value={postData.creator}
+          onChange={(e) =>
+            setPostData({ ...postData, creator: e.target.value })
+          }
+        />
+        {/* This TextField is for the message of the post */}
+        <TextField
+          name="message"
+          variant="outlined"
+          label="Message"
+          fullWidth
+          value={postData.creator}
+          onChange={(e) =>
+            setPostData({ ...postData, creator: e.target.value })
+          }
+        />
+        {/* This TextField is for the tags of the post */}
+        <TextField
+          name="tags"
+          variant="outlined"
+          label="Tags"
+          fullWidth
+          value={postData.creator}
           onChange={(e) =>
             setPostData({ ...postData, creator: e.target.value })
           }
