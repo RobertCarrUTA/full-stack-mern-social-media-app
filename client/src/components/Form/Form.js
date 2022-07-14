@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import FileBase from "react-file-base64";
+import { useDispatch } from "react-redux";
 
 import useStyles from "./styles";
+import { createPost } from "../../actions/posts";
 
 const Form = () => {
-  const classes = useStyles();
   const [postData, setPostData] = useState({
     creator: "",
     title: "",
@@ -13,9 +14,18 @@ const Form = () => {
     tags: "",
     selectedFile: "",
   });
+  const classes = useStyles();
+  const dispatch = useDispatch();
 
-  // Handler function
-  const handleSubmit = () => {};
+  // Our goal in handleSubmit is to send an output request with all
+  // the information the user typed in once the user submits
+  const handleSubmit = (e) => {
+    // This prevents the refresh in the browser
+    e.preventDefault();
+
+    // Once this action is dispatched, we go to reducers and go to the case 'CREATE'
+    dispatch(createPost(postData));
+  };
 
   const clear = () => {};
 
