@@ -24,7 +24,8 @@ const Form = () => {
       <form
         autoComplete="off"
         noValidate
-        className={classes.form}
+        // classes.root allows for the padding and margin
+        className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
         <Typography variant="h6">Creating a Memory</Typography>
