@@ -17,6 +17,8 @@ const Form = () => {
   // Handler function
   const handleSubmit = () => {};
 
+  const clear = () => {};
+
   return (
     <Paper className={classes.paper}>
       <form
@@ -86,13 +88,24 @@ const Form = () => {
         {/* Submission button */}
         <Button
           className={classes.buttonSubmit}
-          variant="container"
+          variant="contained"
           color="primary"
           size="large"
           type="submit"
           fullWidth
         >
           Submit
+        </Button>
+
+        {/* Clear form button */}
+        <Button
+          variant="contained"
+          color="secondary"
+          size="small"
+          onClick={clear}
+          fullWidth
+        >
+          Clear
         </Button>
       </form>
     </Paper>
