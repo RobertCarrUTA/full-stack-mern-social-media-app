@@ -4,9 +4,9 @@ import FileBase from "react-file-base64";
 import { useDispatch } from "react-redux";
 
 import useStyles from "./styles";
-import { createPost } from "../../actions/posts";
+import { createPost, updatePost } from "../../actions/posts";
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
     creator: "",
     title: "",
@@ -23,8 +23,12 @@ const Form = () => {
     // This prevents the refresh in the browser
     e.preventDefault();
 
-    // Once this action is dispatched, we go to reducers and go to the case 'CREATE'
-    dispatch(createPost(postData));
+    if (currentId) {
+      dispatch(updatePost(currentId, postData));
+    } else {
+      // Once this action is dispatched, we go to reducers and go to the case 'CREATE'
+      dispatch(createPost(postData));
+    }
   };
 
   const clear = () => {};
